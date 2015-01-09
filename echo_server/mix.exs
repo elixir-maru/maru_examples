@@ -13,6 +13,6 @@ defmodule EchoServer.Mixfile do
   end
 
   defp deps do
-    [{:maru, "~> 0.2.5"}]
+    [{:maru, "~> 0.2.7"}]
   end
 end
