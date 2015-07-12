@@ -6,11 +6,13 @@
 use Mix.Config
 
 # Configures the endpoint
-config :phonenix_maru, PhonenixMaru.Endpoint,
+config :phoenix_maru, PhoenixMaru.Endpoint,
   url: [host: "localhost"],
-  http: [port: System.get_env("PORT")],
-  secret_key_base: "8sxqgciRG5zqqXlmIaT5mI+uIQXZrwM6FbHXCvwA767LLXXK6fw3Pq2PZtuFs15E",
-  debug_errors: false
+  root: Path.dirname(__DIR__),
+  secret_key_base: "RN8N65uGgOXc/pktaMGlVoj51dE1VoJqdGmGxKxzkObjzIsWYdqYrED+UOiSo4St",
+  render_errors: [default_format: "html"],
+  pubsub: [name: PhoenixMaru.PubSub,
+           adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

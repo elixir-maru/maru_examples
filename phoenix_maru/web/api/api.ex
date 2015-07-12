@@ -2,6 +2,6 @@ defmodule PhoenixMaru.API do
   use Maru.Router
 
   get do
-    "API works!" |> text
+    "API works!"
   end
 end

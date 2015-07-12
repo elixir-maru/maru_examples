@@ -3,7 +3,7 @@ defmodule EchoServer.Mixfile do
 
   def project do
     [app: :echo_server,
-     version: "0.0.1",
+     version: "0.1.0",
      elixir: "~> 1.0",
      deps: deps]
   end
@@ -13,6 +13,6 @@ defmodule EchoServer.Mixfile do
   end
 
   defp deps do
-    [{:maru, "~> 0.2.7"}]
+    [{:maru, "~> 0.4"}]
   end
 end

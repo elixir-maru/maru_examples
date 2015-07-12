@@ -20,7 +20,7 @@ defmodule MaruVersion.API.V1 do
 
   desc "get v1"
   get do
-    "It works V1!" |> text
+    "It works V1!"
   end
 
   mount Maru.Version.API.Shared
@@ -33,7 +33,7 @@ defmodule MaruVersion.API.V2 do
 
   desc "get v2"
   get do
-    "It works V2!" |> text
+    "It works V2!"
   end
 
   mount Maru.Version.API.Shared
@@ -46,7 +46,7 @@ defmodule Maru.Version.API.Shared do
   desc "shared"
   resource :shared do
     get do
-      "It works for all version!" |> text
+      "It works for all version!"
     end
   end
 end

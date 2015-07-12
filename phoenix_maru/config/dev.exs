@@ -1,8 +1,35 @@
 use Mix.Config
 
-config :phonenix_maru, PhonenixMaru.Endpoint,
-  http: [port: System.get_env("PORT") || 4000],
-  debug_errors: true
+# For development, we disable any cache and enable
+# debugging and code reloading.
+#
+# The watchers configuration can be used to run external
+# watchers to your application. For example, we use it
+# with brunch.io to recompile .js and .css sources.
+config :phoenix_maru, PhoenixMaru.Endpoint,
+  http: [port: 4000],
+  debug_errors: true,
+  code_reloader: true,
+  cache_static_lookup: false,
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch"]]
 
-# Enables code reloading for development
-config :phoenix, :code_reloader, true
+# Watch static and templates for browser reloading.
+config :phoenix_maru, PhoenixMaru.Endpoint,
+  live_reload: [
+    patterns: [
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif)$},
+      ~r{web/views/.*(ex)$},
+      ~r{web/templates/.*(eex)$}
+    ]
+  ]
+
+# Do not include metadata nor timestamps in development logs
+config :logger, :console, format: "[$level] $message\n"
+
+# Configure your database
+config :phoenix_maru, PhoenixMaru.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "phoenix_maru_dev",
+  size: 10 # The amount of database connections in the pool

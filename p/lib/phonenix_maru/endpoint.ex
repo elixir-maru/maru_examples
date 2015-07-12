@@ -6,8 +6,6 @@ defmodule PhonenixMaru.Endpoint do
 
   plug Plug.Logger
 
-  plug Maru.Plugs.Forword, at: "/api", to: PhoenixMaru.API
-
   # Code reloading will only work if the :code_reloader key of
   # the :phoenix application is set to true in your config file.
   plug Phoenix.CodeReloader
@@ -26,5 +24,6 @@ defmodule PhonenixMaru.Endpoint do
     signing_salt: "MC7trGT/",
     encryption_salt: "i+pgK+fW"
 
+  plug Maru.Plugs.Forword, at: "/api", to: PhoenixMaru.API
   plug :router, PhonenixMaru.Router
 end

@@ -1,7 +1,5 @@
-defmodule PhonenixMaru.PageController do
-  use Phoenix.Controller
-
-  plug :action
+defmodule PhoenixMaru.PageController do
+  use PhoenixMaru.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

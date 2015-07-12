@@ -3,7 +3,7 @@ defmodule HttpsServer.Mixfile do
 
   def project do
     [app: :https_server,
-     version: "0.0.1",
+     version: "0.1.0",
      elixir: "~> 1.0",
      deps: deps]
   end
@@ -13,7 +13,6 @@ defmodule HttpsServer.Mixfile do
   end
 
   defp deps do
-    # [{:maru, "~> 0.2.6"}]
-    [{:maru, path: "/Volumes/Z/Codes/remote/elixir/maru/"}]
+    [{:maru, "~> 0.4"}]
   end
 end

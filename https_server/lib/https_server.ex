@@ -6,6 +6,6 @@ defmodule HttpsServer.API do
   plug Plug.Logger
 
   get do
-    "It works!" |> text
+    "It works!"
   end
 end

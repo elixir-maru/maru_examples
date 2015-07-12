@@ -6,7 +6,7 @@ defmodule EchoServer.API1 do
   plug Plug.Logger
 
   get do
-    "It works! port: 8800" |> text
+    "It works! port: 8800"
   end
 end
 
@@ -15,10 +15,11 @@ defmodule EchoServer.API2 do
   plug Plug.Logger
 
   get do
-    "It works! port: 8801" |> text
+    "It works! port: 8801"
   end
 
-  def error(conn, err) do
-    "ERROR: #{inspect err}" |> text(500)
+  rescue_from :all, as: e do
+    status 500
+    "ERROR: #{inspect e}"
   end
 end

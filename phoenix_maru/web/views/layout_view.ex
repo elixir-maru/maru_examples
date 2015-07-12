@@ -1,3 +1,3 @@
-defmodule PhonenixMaru.LayoutView do
-  use PhonenixMaru.View
+defmodule PhoenixMaru.LayoutView do
+  use PhoenixMaru.Web, :view
 end
