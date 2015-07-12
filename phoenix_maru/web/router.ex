@@ -19,7 +19,9 @@ defmodule PhoenixMaru.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixMaru do
-  #   pipe_through :api
-  # end
+  scope path: "/api" do
+    pipe_through :api
+
+    forward "/", PhoenixMaru.API
+  end
 end

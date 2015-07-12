@@ -19,8 +19,6 @@ defmodule PhoenixMaru.Endpoint do
   plug Plug.RequestId
   plug Plug.Logger
 
-  plug Maru.Plugs.Forword, at: "/api", to: PhoenixMaru.API
-
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
