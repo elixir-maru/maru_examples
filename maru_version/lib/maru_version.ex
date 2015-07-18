@@ -5,10 +5,6 @@ defmodule MaruVersion.API do
   use Maru.Router
   plug Plug.Logger
 
-  # version "v1", using: :path
-  # version "v1", using: :param, parameter: "v"
-  # version "v1", using: :accept_version_header
-
   mount MaruVersion.API.V1
   mount MaruVersion.API.V2
 end
@@ -16,7 +12,8 @@ end
 
 defmodule MaruVersion.API.V1 do
   use Maru.Router
-  version "v1", using: :accept_version_header
+
+  version "v1"
 
   desc "get v1"
   get do
@@ -29,14 +26,15 @@ end
 
 defmodule MaruVersion.API.V2 do
   use Maru.Router
-  version "v2", using: :accept_version_header
 
-  desc "get v2"
-  get do
-    "It works V2!"
+  version "v2" do
+    desc "get v2"
+    get do
+      "It works V2!"
+    end
+
+    mount Maru.Version.API.Shared
   end
-
-  mount Maru.Version.API.Shared
 end
 
 

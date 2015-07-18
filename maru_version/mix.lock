@@ -1,6 +1,6 @@
 %{"cowboy": {:hex, :cowboy, "1.0.2"},
   "cowlib": {:hex, :cowlib, "1.0.1"},
-  "maru": {:hex, :maru, "0.4.0"},
+  "maru": {:git, "git://github.com/falood/maru.git", "82c68e09ff6057f46bab101895d267e69c5e316a", []},
   "plug": {:hex, :plug, "0.13.0"},
   "poison": {:hex, :poison, "1.4.0"},
   "ranch": {:hex, :ranch, "1.1.0"}}
