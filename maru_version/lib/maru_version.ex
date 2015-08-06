@@ -7,6 +7,7 @@ defmodule MaruVersion.API do
 
   mount MaruVersion.API.V1
   mount MaruVersion.API.V2
+  mount MaruVersion.API.V3
 end
 
 
@@ -33,7 +34,34 @@ defmodule MaruVersion.API.V2 do
       "It works V2!"
     end
 
+    get :extend do
+      "This will be extended!"
+    end
+
+    get :no_extend do
+      "This will NOT be extended!"
+    end
+
     mount Maru.Version.API.Shared
+  end
+end
+
+
+defmodule MaruVersion.API.V3 do
+  use Maru.Router
+  # version "v3", extend: "v2", at: MaruVersion.API.V2
+
+  version "v3", extend: "v2", at: MaruVersion.API.V2, only: [
+    get: "/extend",
+    # match: "/extend/*",
+  ]
+
+  # version "v3", extend: "v2", at: MaruVersion.API.V2, except: [
+  #   get: "/no_extend",   # match will me matched for all method
+  # ]
+
+  get do
+    "It works V3!"
   end
 end
 
