@@ -18,7 +18,7 @@ defmodule MaruVersion.API.V1 do
 
   desc "get v1"
   get do
-    "It works V1!"
+    conn |> text "It works V1!"
   end
 
   mount Maru.Version.API.Shared
@@ -31,15 +31,15 @@ defmodule MaruVersion.API.V2 do
   version "v2" do
     desc "get v2"
     get do
-      "It works V2!"
+      conn |> text "It works V2!"
     end
 
     get :extend do
-      "This will be extended!"
+      conn |> text "This will be extended!"
     end
 
     get :no_extend do
-      "This will NOT be extended!"
+      conn |> text "This will NOT be extended!"
     end
 
     mount Maru.Version.API.Shared
@@ -61,7 +61,7 @@ defmodule MaruVersion.API.V3 do
   # ]
 
   get do
-    "It works V3!"
+    conn |> text "It works V3!"
   end
 end
 
@@ -72,7 +72,7 @@ defmodule Maru.Version.API.Shared do
   desc "shared"
   resource :shared do
     get do
-      "It works for all version!"
+      conn |> text "It works for all version!"
     end
   end
 end

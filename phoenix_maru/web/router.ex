@@ -6,6 +6,7 @@ defmodule PhoenixMaru.Router do
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
+    plug :put_secure_browser_headers
   end
 
   pipeline :api do
@@ -22,6 +23,7 @@ defmodule PhoenixMaru.Router do
   scope path: "/api" do
     pipe_through :api
 
-    forward "/", PhoenixMaru.API
+    forward "/", PhoenixMaru.APIs.Homepage
   end
+
 end

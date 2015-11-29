@@ -9,8 +9,8 @@ use Mix.Config
 config :phoenix_maru, PhoenixMaru.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
-  secret_key_base: "RN8N65uGgOXc/pktaMGlVoj51dE1VoJqdGmGxKxzkObjzIsWYdqYrED+UOiSo4St",
-  render_errors: [default_format: "html"],
+  secret_key_base: "AZhTjxRWxbn5CQvg8JRUHO/8QoogrRwn2HMZcfLUT5+ofRSyLyDYfeCTDu16jVWY",
+  render_errors: [accepts: ~w(html json)],
   pubsub: [name: PhoenixMaru.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -22,3 +22,8 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+# Configure phoenix generators
+config :phoenix, :generators,
+  migration: true,
+  binary_id: false

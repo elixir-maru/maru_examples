@@ -15,5 +15,5 @@ config :phoenix_maru, PhoenixMaru.Repo,
   username: "postgres",
   password: "postgres",
   database: "phoenix_maru_test",
-  pool: Ecto.Adapters.SQL.Sandbox, # Use a sandbox for transactional testing
-  size: 1
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox
