@@ -23,7 +23,8 @@ defmodule PhoenixMaru.Router do
   scope path: "/api" do
     pipe_through :api
 
-    forward "/", PhoenixMaru.APIs.Homepage
+    scope "/mob" do
+      forward "/", PhoenixMaru.APIs.Homepage
+    end
   end
-
 end

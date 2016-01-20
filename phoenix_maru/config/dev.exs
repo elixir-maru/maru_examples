@@ -40,3 +40,9 @@ config :phoenix_maru, PhoenixMaru.Repo,
   database: "phoenix_maru_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :maru, PhoenixMaru.APIs.Homepage,
+  versioning: [
+    using: :param,
+    parameter: "v",
+  ]
