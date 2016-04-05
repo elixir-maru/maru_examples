@@ -26,5 +26,10 @@ defmodule PhoenixMaru.Router do
     scope "/mob" do
       forward "/", PhoenixMaru.APIs.Homepage
     end
+
+    scope "/mob2" do
+      forward "/", PhoenixMaru.APIs.Versioning.Path
+    end
+
   end
 end
