@@ -13,6 +13,6 @@ defmodule HttpsServer.Mixfile do
   end
 
   defp deps do
-    [{:maru, "~> 0.9"}]
+    [{:maru, "~> 0.10"}]
   end
 end

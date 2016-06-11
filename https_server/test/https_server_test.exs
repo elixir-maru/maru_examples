@@ -5,6 +5,6 @@ defmodule HttpsServerTest do
   test "/" do
     assert %Plug.Conn {
       resp_body: "It works!"
-    } = conn(:get, "/") |> make_response("v1")
+    } = conn(:get, "/") |> make_response
   end
 end
