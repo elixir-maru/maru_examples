@@ -46,3 +46,8 @@ config :maru, PhoenixMaru.APIs.Homepage,
     using: :param,
     parameter: "v",
   ]
+
+config :maru, PhoenixMaru.APIs.Versioning.Path,
+  versioning: [
+    using: :path,
+  ]

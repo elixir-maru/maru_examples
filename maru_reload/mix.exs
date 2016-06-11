@@ -16,8 +16,8 @@ defmodule MaruReload.Mixfile do
   end
 
   defp deps do
-    [ { :maru, "~> 0.9" },
-      { :exsync,     "~> 0.1", only: :dev },
+    [ { :maru, "~> 0.10" },
+      { :exsync, "~> 0.1", only: :dev },
     ]
   end
 end

@@ -30,13 +30,13 @@ defmodule PhoenixMaru.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:maru, "~> 0.9"},
+    [{:maru, "~> 0.10"},
+     {:maru_swagger, "~> 0.8"},
      {:phoenix, "~> 1.1"},
      {:phoenix_ecto, "~> 1.1"},
      {:postgrex, "~> 0.10"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:maru_swagger, github: "falood/maru_swagger", only: :dev},
      {:cowboy, "~> 1.0"}]
   end
 
