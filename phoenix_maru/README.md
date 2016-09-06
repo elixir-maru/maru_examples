@@ -11,6 +11,22 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
+### Check the phoenix_maru's api routers:
+
+```
+$ curl http://localhost:4000/api/mob
+API works!
+
+$ curl http://localhost:4000/api/mob2/versioning_path/
+API for path versioning works!
+
+$ curl http://localhost:4000/api/mob2/versioning_path/router/v1
+Router: v1
+
+$ curl http://localhost:4000/api/mob2/versioning_path/router/v2
+Router: v2
+```
+
 ## Learn more
 
   * Official website: http://www.phoenixframework.org/
