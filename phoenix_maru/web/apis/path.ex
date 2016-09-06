@@ -5,8 +5,8 @@ defmodule PhoenixMaru.APIs.Versioning.Path do
   prefix :versioning_path
 
   swagger at:     "/swagger",
-          pretty: true,
-          except:   [:prod]
+    pretty: true,
+    except:   [:prod]
 
   get do
     text(conn, "API for path versioning works!")

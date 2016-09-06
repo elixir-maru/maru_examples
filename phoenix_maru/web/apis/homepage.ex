@@ -3,7 +3,7 @@ defmodule PhoenixMaru.APIs.Homepage do
   use MaruSwagger
 
   swagger at:     "/swagger",
-          pretty: true
+    pretty: true
 
   get do
     text(conn, "API works!")

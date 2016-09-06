@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h2>Welcome to Phoenix!</h2>
+  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
   <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
 </div>
 
@@ -11,7 +11,7 @@
         <a href="http://phoenixframework.org/docs/overview">Guides</a>
       </li>
       <li>
-        <a href="http://hexdocs.pm/phoenix">Docs</a>
+        <a href="https://hexdocs.pm/phoenix">Docs</a>
       </li>
       <li>
         <a href="https://github.com/phoenixframework/phoenix">Source</a>

@@ -18,10 +18,11 @@ defmodule PhoenixMaru.Web do
 
   def model do
     quote do
-      use Ecto.Model
+      use Ecto.Schema
 
+      import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
     end
   end
 
@@ -30,10 +31,11 @@ defmodule PhoenixMaru.Web do
       use Phoenix.Controller
 
       alias PhoenixMaru.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto
+      import Ecto.Query
 
       import PhoenixMaru.Router.Helpers
+      import PhoenixMaru.Gettext
     end
   end
 
@@ -48,6 +50,8 @@ defmodule PhoenixMaru.Web do
       use Phoenix.HTML
 
       import PhoenixMaru.Router.Helpers
+      import PhoenixMaru.ErrorHelpers
+      import PhoenixMaru.Gettext
     end
   end
 
@@ -62,8 +66,9 @@ defmodule PhoenixMaru.Web do
       use Phoenix.Channel
 
       alias PhoenixMaru.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto
+      import Ecto.Query
+      import PhoenixMaru.Gettext
     end
   end
 
