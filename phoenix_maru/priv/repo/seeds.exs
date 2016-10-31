@@ -5,7 +5,7 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     PhoenixMaru.Repo.insert!(%SomeModel{})
+#     PhoenixMaru.Repo.insert!(%PhoenixMaru.SomeModel{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.

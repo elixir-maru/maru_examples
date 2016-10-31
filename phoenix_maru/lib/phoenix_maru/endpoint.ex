@@ -30,10 +30,13 @@ defmodule PhoenixMaru.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
 
+  # The session will be stored in the cookie and signed,
+  # this means its contents can be read but not tampered with.
+  # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
     key: "_phoenix_maru_key",
-    signing_salt: "sCN4znxy"
+    signing_salt: "LbEsg5fr"
 
   plug PhoenixMaru.Router
 end
