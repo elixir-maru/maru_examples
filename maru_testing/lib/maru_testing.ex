@@ -65,10 +65,37 @@ defmodule B2 do
   mount A2
 end
 
+defmodule C do
+  use Maru.Router
+  plug TA
+
+  namespace :c do
+    mount D
+  end
+end
+
+defmodule D do
+  use Maru.Router
+  plug TB1
+
+  namespace :d do
+    mount E
+  end
+end
+
+defmodule E do
+  use Maru.Router
+
+  get :e do
+    text(conn, "E")
+  end
+end
+
 defmodule API do
   use Maru.Router
   plug_overridable :test_a, TA
 
   mount B1
   mount B2
+  mount C
 end

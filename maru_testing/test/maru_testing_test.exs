@@ -46,3 +46,14 @@ defmodule B2A2Test do
     assert 0 == private.maru_plug_ta
   end
 end
+
+defmodule ETest do
+  use ExUnit.Case
+  use Maru.Test, for: E
+
+  test "/e" do
+    private = get("/e").private
+    assert 1 == private.maru_plug_tb
+    assert 0 == private.maru_plug_ta
+  end
+end
