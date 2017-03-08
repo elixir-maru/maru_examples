@@ -1,0 +1,10 @@
+language: elixir
+otp_release: 17.4
+elixir: 1.4.1
+env:
+  - EXAMPLE_DIR=echo_server
+  - EXAMPLE_DIR=https_server
+  - EXAMPLE_DIR=maru_testing
+  - EXAMPLE_DIR=maru_version
+  - EXAMPLE_DIR=phoenix_maru
+before_install: cd $EXAMPLE_DIR
