@@ -1,28 +1,28 @@
 defmodule MaruTesting do
 end
 
-defmodule NUL do
+defmodule PlugNULL do
   def init([]), do: []
   def call(conn, []) do
     conn
   end
 end
 
-defmodule TA do
+defmodule PlugPutA0 do
   def init([]), do: []
   def call(conn, []) do
     conn |> Plug.Conn.put_private(:maru_plug_ta, 0)
   end
 end
 
-defmodule TB1 do
+defmodule PlugPutB1 do
   def init([]), do: []
   def call(conn, []) do
     conn |> Plug.Conn.put_private(:maru_plug_tb, 1)
   end
 end
 
-defmodule TB2 do
+defmodule PlugPutB2 do
   def init([]), do: []
   def call(conn, []) do
     conn |> Plug.Conn.put_private(:maru_plug_tb, 2)
@@ -33,9 +33,9 @@ defmodule A1 do
   use Maru.Router
 
   pipeline do
-    plug_overridable :test_a, NUL
+    plug_overridable :test_a, PlugNULL
   end
-  get do
+  get :a1 do
     text(conn, "A1")
   end
 end
@@ -43,7 +43,7 @@ end
 defmodule A2 do
   use Maru.Router
 
-  get do
+  get :a2 do
     text(conn, "A2")
   end
 end
@@ -51,7 +51,8 @@ end
 
 defmodule B1 do
   use Maru.Router
-  plug_overridable :test_b, TB1
+  prefix :b1
+  plug_overridable :test_b, PlugPutB1
 
   mount A1
   mount A2
@@ -59,28 +60,11 @@ end
 
 defmodule B2 do
   use Maru.Router
-  plug_overridable :test_b, TB2
+  prefix :b2
+  plug_overridable :test_b, PlugPutB2
 
   mount A1
   mount A2
-end
-
-defmodule C do
-  use Maru.Router
-  plug TA
-
-  namespace :c do
-    mount D
-  end
-end
-
-defmodule D do
-  use Maru.Router
-  plug TB1
-
-  namespace :d do
-    mount E
-  end
 end
 
 defmodule E do
@@ -91,9 +75,27 @@ defmodule E do
   end
 end
 
-defmodule API do
+defmodule D do
   use Maru.Router
-  plug_overridable :test_a, TA
+  plug PlugPutB1
+
+  namespace :d do
+    mount E
+  end
+end
+
+defmodule C do
+  use Maru.Router
+  plug PlugPutA0
+
+  namespace :c do
+    mount D
+  end
+end
+
+defmodule API do
+  use Maru.Router, make_plug: true
+  plug_overridable :test_a, PlugPutA0
 
   mount B1
   mount B2

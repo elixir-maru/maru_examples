@@ -16,6 +16,6 @@ defmodule MaruTesting.Mixfile do
   end
 
   defp deps do
-    [{:maru, github: "falood/maru"}]
+    [{:maru, "~> 0.12"}]
   end
 end
