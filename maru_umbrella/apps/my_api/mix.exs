@@ -36,6 +36,6 @@ defmodule MyApi.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:maru, "~> 0.11"}]
+    [{:maru, "~> 0.12"}]
   end
 end
