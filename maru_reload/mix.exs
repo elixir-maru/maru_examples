@@ -4,10 +4,10 @@ defmodule MaruReload.Mixfile do
   def project do
     [ app: :maru_reload,
       version: "0.0.1",
-      elixir: "~> 1.0",
+      elixir: "~> 1.3",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
-      deps: deps,
+      deps: deps(),
     ]
   end
 
@@ -17,7 +17,7 @@ defmodule MaruReload.Mixfile do
 
   defp deps do
     [ { :maru, "~> 0.10" },
-      { :exsync, "~> 0.1", only: :dev },
+      { :exsync, "~> 0.2", only: :dev },
     ]
   end
 end
